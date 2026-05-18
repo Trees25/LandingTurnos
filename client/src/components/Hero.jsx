@@ -4,16 +4,31 @@ import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react'
 import screenshotPlanner from '../assets/image.webp'
 
 const DEMO_URL = 'https://trees-turnos.netlify.app'
-const WA_URL = 'https://wa.me/5402646620954'
+const WA_URL = 'https://wa.me/5492646620954'
 
 const WORDS = ['hospitales', 'restaurantes', 'fábricas', 'seguridad', 'comercios', 'clínicas']
 
+const SHIFTS = [
+  { label: 'Mañana', color: 'bg-sky-500 text-white' },
+  { label: 'Tarde', color: 'bg-orange-400 text-white' },
+  { label: 'Noche', color: 'bg-indigo-500 text-white' },
+  { label: 'Franco', color: 'bg-slate-500 text-white' },
+]
+
+const ROWS = [
+  { name: 'Ana García', shifts: [0, null, 1, 0, null, 3, null] },
+  { name: 'Carlos López', shifts: [null, 2, null, 1, 1, null, 0] },
+  { name: 'María Sosa', shifts: [1, 1, 0, null, 2, null, 3] },
+]
+
+const DAYS = ['LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB', 'DOM']
+
 function SystemMockup() {
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      <div className="absolute inset-0 bg-sky-500/8 blur-3xl rounded-3xl pointer-events-none" />
-      <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-        {/* Browser chrome */}
+    <div className="relative w-full max-w-3xl mx-auto">
+      <div className="absolute inset-0 bg-sky-500/8 blur-3xl rounded-3xl" />
+      <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl" style={{ background: 'rgba(255,255,255,0.02)' }}>
+        {/* Browser bar */}
         <div className="bg-[#0d1526] border-b border-white/5 px-4 py-2.5 flex items-center gap-3">
           <div className="flex gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
@@ -24,16 +39,51 @@ function SystemMockup() {
             <span className="text-[10px] text-slate-500">trees-turnos.netlify.app</span>
           </div>
         </div>
-        <img
-          src={screenshotPlanner}
-          alt="Vista de la planilla semanal del sistema de turnos"
-          className="w-full block"
-        />
+
+        {/* App UI */}
+        <div className="bg-[#f7fdf4] p-4">
+          {/* Top bar */}
+          <div className="flex items-center justify-between mb-3 pb-2.5 border-b border-slate-200">
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-bold text-slate-700">📅 Planilla semanal</span>
+              <span className="text-[10px] text-slate-400">· Semana 11 may — 17 may</span>
+            </div>
+            <span className="px-2.5 py-0.5 rounded text-[10px] font-bold bg-green-700 text-white">Guardar</span>
+          </div>
+
+          {/* Chips */}
+          <div className="flex gap-1.5 flex-wrap mb-3">
+            {SHIFTS.map(s => (
+              <span key={s.label} className={`${s.color} text-[9px] font-bold px-2 py-0.5 rounded-full`}>{s.label}</span>
+            ))}
+          </div>
+
+          {/* Table */}
+          <div className="overflow-x-auto">
+            <div className="min-w-[520px]">
+              <div className="grid grid-cols-8 gap-1 mb-1">
+                <div className="text-[9px] font-bold text-slate-400 uppercase">Empleado</div>
+                {DAYS.map((d, i) => (
+                  <div key={d} className="text-[9px] font-bold text-slate-400 uppercase text-center">{d}<br /><span className="text-slate-300">{11 + i}</span></div>
+                ))}
+              </div>
+              {ROWS.map(row => (
+                <div key={row.name} className="grid grid-cols-8 gap-1 py-1.5 border-t border-slate-100/50">
+                  <div className="text-[9px] font-semibold text-slate-700 truncate pr-1">{row.name}</div>
+                  {row.shifts.map((s, i) => (
+                    <div key={i} className={`rounded text-[8px] font-bold text-center py-0.5 ${s !== null ? SHIFTS[s].color + ' opacity-80' : 'bg-transparent'}`}>
+                      {s !== null ? SHIFTS[s].label : ''}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
 }
-
 
 export default function Hero() {
   const [idx, setIdx] = useState(0)

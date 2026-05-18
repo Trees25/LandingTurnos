@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, MessageCircle } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 
-const DEMO_URL = 'https://trees-turnos.netlify.app'
-const WA_URL   = 'https://wa.me/5402646620954'
+const WA_DEMO_URL = 'https://wa.me/5402646620954?text=Hola%21%20Me%20gustar%C3%ADa%20probar%20el%20sistema%20de%20turnos.%20%C2%BFPodr%C3%ADan%20enviarme%20un%20usuario%20y%20contrase%C3%B1a%20de%20prueba%3F'
+const WA_URL      = 'https://wa.me/5402646620954'
 
 export default function CTASection() {
   return (
@@ -35,12 +35,13 @@ export default function CTASection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={DEMO_URL}
+              href={WA_DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-900 font-bold text-base transition-all duration-200 glow-btn hover:scale-105"
             >
-              Abrir Demo <ExternalLink size={17} />
+              <MessageCircle size={17} />
+              Pedir acceso a la Demo
             </a>
             <a
               href={WA_URL}
@@ -55,7 +56,7 @@ export default function CTASection() {
 
           {/* Small print */}
           <p className="mt-8 text-slate-600 text-sm">
-            La demo es pública · Sin tarjeta de crédito · Sin compromisos
+            Te enviamos usuario y contraseña de prueba por WhatsApp · Sin compromisos
           </p>
         </motion.div>
       </div>
