@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { CalendarDays, Menu, X, ExternalLink } from 'lucide-react'
 
-const DEMO_URL = 'https://trees-turnos.netlify.app'
+const WA_DEMO_URL = 'https://wa.me/5492646620954?text=Hola%21+Me+gustar%C3%ADa+probar+la+demostraci%C3%B3n+del+sistema+de+turnos.'
 const navLinks = [
   { label: 'Características', href: '#features' },
   { label: 'Cómo funciona', href: '#how' },
@@ -44,12 +44,12 @@ export default function Navbar() {
         </div>
 
         <a
-          href={DEMO_URL}
+          href={WA_DEMO_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-900 font-semibold text-sm transition-all duration-200 glow-btn hover:scale-105"
         >
-          Acceder al Sistema <ExternalLink size={13} />
+          Pedir acceso <ExternalLink size={13} />
         </a>
 
         <button className="md:hidden text-slate-400 hover:text-white" onClick={() => setOpen(!open)}>
@@ -69,8 +69,8 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a href={DEMO_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-sky-500 text-slate-900 font-semibold text-sm">
-              Acceder al Sistema <ExternalLink size={13} />
+            <a href={WA_DEMO_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-sky-500 text-slate-900 font-semibold text-sm">
+              Pedir acceso <ExternalLink size={13} />
             </a>
           </div>
         </motion.div>

@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react'
 import screenshotPlanner from '../assets/image.webp'
 
-const DEMO_URL = 'https://trees-turnos.netlify.app'
-const WA_URL = 'https://wa.me/5492646620954'
+const WA_DEMO_URL = 'https://wa.me/5492646620954?text=Hola%21+Me+gustar%C3%ADa+probar+la+demostraci%C3%B3n+del+sistema+de+turnos.'
+const WA_URL = 'https://wa.me/5492646620954?text=Hola%21+Me+gustar%C3%ADa+trabajar+con+el+sistema+de+turnos%2C+personalizado+para+mi+negocio.'
 
 const WORDS = ['hospitales', 'restaurantes', 'fábricas', 'seguridad', 'comercios', 'clínicas']
 
@@ -106,7 +106,7 @@ export default function Hero() {
           className="flex items-center gap-2 px-4 py-1.5 rounded-full glass-card"
         >
           <Sparkles size={13} className="text-sky-400" />
-          <span className="text-xs font-medium text-sky-300">Demo disponible ahora mismo — sin registro</span>
+          <span className="text-xs font-medium text-sky-300">Pedí acceso a la demo por WhatsApp</span>
         </motion.div>
 
         {/* Headline */}
@@ -146,10 +146,10 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-3"
         >
           <a
-            href={DEMO_URL} target="_blank" rel="noopener noreferrer"
+            href={WA_DEMO_URL} target="_blank" rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-900 font-bold text-sm transition-all duration-200 glow-btn hover:scale-105"
           >
-            Ver Demo en vivo <ExternalLink size={15} />
+            Pedir acceso a la Demo <ExternalLink size={15} />
           </a>
           <a
             href={WA_URL} target="_blank" rel="noopener noreferrer"

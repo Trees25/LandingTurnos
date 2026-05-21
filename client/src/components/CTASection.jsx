@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { MessageCircle } from 'lucide-react'
+import { ExternalLink, MessageCircle } from 'lucide-react'
 
-const WA_DEMO_URL = 'https://wa.me/5402646620954?text=Hola%21%20Me%20gustar%C3%ADa%20probar%20el%20sistema%20de%20turnos.%20%C2%BFPodr%C3%ADan%20enviarme%20un%20usuario%20y%20contrase%C3%B1a%20de%20prueba%3F'
-const WA_URL      = 'https://wa.me/5402646620954'
+const WA_DEMO_URL = 'https://wa.me/5492646620954?text=Hola%21+Me+gustar%C3%ADa+probar+la+demostraci%C3%B3n+del+sistema+de+turnos.'
+const WA_URL = 'https://wa.me/5492646620954?text=Hola%21+Me+gustar%C3%ADa+trabajar+con+el+sistema+de+turnos%2C+personalizado+para+mi+negocio.'
 
 export default function CTASection() {
   return (
@@ -30,7 +30,7 @@ export default function CTASection() {
           </h2>
 
           <p className="text-slate-400 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            Probá el sistema ahora mismo sin registro. Si te interesa una versión propia, personalizada para tu empresa, hablanos por WhatsApp.
+            Probá el sistema ahora mismo sin registro. Si te interesa una versión propia, <span className="text-gradient">personalizada para tu empresa</span>, hablanos por WhatsApp.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -40,8 +40,7 @@ export default function CTASection() {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-900 font-bold text-base transition-all duration-200 glow-btn hover:scale-105"
             >
-              <MessageCircle size={17} />
-              Pedir acceso a la Demo
+              Pedir acceso a la Demo <ExternalLink size={17} />
             </a>
             <a
               href={WA_URL}
@@ -56,7 +55,7 @@ export default function CTASection() {
 
           {/* Small print */}
           <p className="mt-8 text-slate-600 text-sm">
-            Te enviamos usuario y contraseña de prueba por WhatsApp · Sin compromisos
+            Te respondemos por WhatsApp · Sin tarjeta de crédito · Sin compromisos
           </p>
         </motion.div>
       </div>

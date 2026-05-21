@@ -1,6 +1,6 @@
 import { CalendarDays, ExternalLink } from 'lucide-react'
 
-const DEMO_URL = 'https://trees-turnos.netlify.app'
+const WA_DEMO_URL = 'https://wa.me/5492646620954?text=Hola%21+Me+gustar%C3%ADa+probar+la+demostraci%C3%B3n+del+sistema+de+turnos.'
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Links */}
           <nav className="flex items-center gap-6">
             {[
-              { label: 'Demo', href: DEMO_URL, external: true },
+              { label: 'Demo', href: WA_DEMO_URL, external: true },
               { label: 'Características', href: '#features' },
               { label: 'Industrias', href: '#industries' },
               { label: 'Contacto', href: '#contact' },

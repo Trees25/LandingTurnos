@@ -71,12 +71,12 @@ export default function Showcase() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
+        <div className="flex overflow-x-auto justify-start md:justify-center gap-2 mb-6 pb-1 no-scrollbar">
           {tabs.map(({ id, icon: Icon, label, badge, badgeColor }, i) => (
             <button
               key={id}
               onClick={() => setActive(i)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${active === i
+              className={`flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${active === i
                 ? 'bg-sky-500 text-slate-900 shadow-lg shadow-sky-500/30'
                 : 'glass-card text-slate-400 hover:text-white hover:border-sky-500/25'
                 }`}
@@ -128,7 +128,7 @@ export default function Showcase() {
             </div>
 
             {/* Screenshot with fade transition */}
-            <div className="relative overflow-hidden" style={{ minHeight: '300px' }}>
+            <div className="relative overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={active}
@@ -138,7 +138,7 @@ export default function Showcase() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.22 }}
-                  className="w-full block"
+                  className="w-full block object-cover object-top"
                 />
               </AnimatePresence>
             </div>
